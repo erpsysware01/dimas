@@ -1,0 +1,1 @@
+python -m venv env in the folder where you want to keep the project. Activate it using env\Scripts\activate.
