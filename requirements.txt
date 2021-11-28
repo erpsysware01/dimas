@@ -32,13 +32,10 @@ psycopg2==2.8.3
 pydot==1.2.3
 pyparsing==2.1.10
 PyPDF2==1.26.0
-
 pyserial==3.1.1
 python-dateutil==2.5.3
 python-stdnum==1.14
-pytz==2016.7
 pyusb==1.0.0
-
 PyYAML==3.12
 qrcode==5.3
 requests==2.20.0
