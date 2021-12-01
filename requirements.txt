@@ -11,10 +11,10 @@ typing_extensions==4.0.0
 unicorn==1.0.3
 Werkzeug==2.0.2
 zipp==3.6.0
+psycopg2==2.8.3
 Flask-SQLAlchemy
 flask-marshmallow
 marshmallow-sqlalchemy
 requests
-psycopg2
 
 
