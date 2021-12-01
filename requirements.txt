@@ -12,4 +12,8 @@ unicorn==1.0.3
 Werkzeug==2.0.2
 zipp==3.6.0
 Flask-SQLAlchemy
+flask-marshmallow
+marshmallow-sqlalchemy
+requests
+
 
