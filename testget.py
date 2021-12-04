@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import os
 import requests
-from .app import app,db,ma,product_schema,products_schema
+from app import app,db,ma,product_schema,products_schema,Product
 
 # Get All Products
 @app.route('/product', methods=['GET'])
