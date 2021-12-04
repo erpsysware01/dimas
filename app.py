@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+import testget
 import os
 import requests
 ################################################
@@ -75,13 +76,13 @@ def add_product():
   return product_schema.jsonify(new_product)
 
 # Get All Products
-@app.route('/product', methods=['GET'])
-def get_products():
-  all_products = Product.query.all()
-  result = products_schema.dump(all_products)
-
-  # return jsonify(result.data)
-  return jsonify(result)
+# @app.route('/product', methods=['GET'])
+# def get_products():
+#   all_products = Product.query.all()
+#   result = products_schema.dump(all_products)
+#
+#   # return jsonify(result.data)
+#   return jsonify(result)
 
 # Get Single Products
 @app.route('/product/<id>', methods=['GET'])
