@@ -77,6 +77,6 @@ if __name__== '__main__':
   app.register_blueprint(route_masjid)
   app.register_blueprint(route_user)
   # db.create_all()
-  app.run(debug=True)
-  # app.run()
+  # app.run(debug=True)
+  app.run()
 
