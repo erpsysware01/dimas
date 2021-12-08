@@ -31,7 +31,7 @@ migrate = Migrate(app, db)
 
 
 # Init MA
-ma = Marshmallow(app)
+# ma = Marshmallow(app)
 
 
 
@@ -50,9 +50,9 @@ ma = Marshmallow(app)
   #   self.qty = qty
 
 # Product Schema
-class MasjidSchema(ma.Schema):
-  class Meta:
-    fields = ('id', 'name')
+# class MasjidSchema(ma.Schema):
+#   class Meta:
+#     fields = ('id', 'name')
 
 # Init schema
 # product_schema = ProductSchema(strict=True)
@@ -60,80 +60,22 @@ class MasjidSchema(ma.Schema):
 # For those getting this error "TypeError: __init__() got an unexpected keyword argument 'strict'
 # ". Try to remove strict=True from both Schemas, as from marshmallow 3.x.x, Schemas are always strict.
 # More info here: https://marshmallow.readthedocs.io/en/stable/upgrading.html
-masjid_schema = MasjidSchema()
-masjids_schema = MasjidSchema(many=True)
-
-# Create a Product
-@app.route('/masjid', methods=['POST'])
-def add_masjid():
-  name = request.json['name']
+# masjid_schema = MasjidSchema()
+# masjids_schema = MasjidSchema(many=True)
 
 
-  new_masjid = Masjid(name)
-
-  db.session.add(new_masjid)
-  db.session.commit()
-
-  return masjid_schema.jsonify(new_masjid)
-
-# Get All masjid
-@app.route('/masjid', methods=['GET'])
-def get_products():
-  all_masjid = Masjid.query.all()
-  result = masjids_schema.dump(all_masjid)
-
-  # return jsonify(result.data)
-  return jsonify(result)
-
-# Get Single Products
-@app.route('/masjid/<id>', methods=['GET'])
-def get_all_masjid(id):
-  product = Masjid.query.get(id)
-  return masjid_schema.jsonify(product)
-
-# Update a Product
-@app.route('/masjid/<id>', methods=['PUT'])
-def update_product(id):
-  masjid = Masjid.query.get(id)
-
-  name = request.json['name']
-
-  masjid.name = name
-
-
-  db.session.commit()
-
-  return masjid_schema.jsonify(masjid)
-
-# Delete Product
-@app.route('/masjid/<id>', methods=['DELETE'])
-def delete_masjid(id):
-  # masjid = Masjid.query.get(id)
-  # # Masjid.query.filter_by(id=id).delete()
-  # # db.session.add(Masjid)
-  # db.session.delete(masjid)
-  # #
-  # db.session.commit()
-  record_obj = db.session.query(Masjid).filter(Masjid.id == id).first()
-  db.session.delete(record_obj)
-  db.session.commit()
-
-  return masjid_schema.jsonify(record_obj)
-
-
-# @app.route('/')
-# def hello():
-#     return 'Hello world ***'
-@app.route('/',methods=['GET'])
-def get():
-    return jsonify({'msg':'Hello World'})
 
 if __name__== '__main__':
-  # from database import User_test3
-
   from database import Masjid
   from database import User_dimas
 
+  from route_masjid import route_masjid
+  from route_user import route_user
+
+
+
+  app.register_blueprint(route_masjid)
+  app.register_blueprint(route_user)
   # db.create_all()
   app.run(debug=True)
   # app.run()
