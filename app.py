@@ -69,9 +69,9 @@ migrate = Migrate(app, db)
 # masjid_schema = MasjidSchema()
 # masjids_schema = MasjidSchema(many=True)
 
-# @app.route('/hello',methods=['GET'])
-# def hello():
-#     return jsonify({'msg':'Hello World'})
+@app.route('/hello',methods=['GET'])
+def hello():
+    return jsonify({'msg':'Hello World'})
 
 # @route_masjid.route('/',methods=['GET'])
 # def get():
