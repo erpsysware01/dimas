@@ -16,6 +16,9 @@ import requests
 
 #init app
 app = Flask(__name__)
+
+
+
 # app.register_blueprint(app_file1)
 # app.register_blueprint(testget)
 #DATABASE
@@ -28,6 +31,9 @@ db =SQLAlchemy(app)
 migrate = Migrate(app, db)
 # from database import Masjid
 # from database import User_dimas
+
+
+
 
 
 # Init MA
@@ -63,18 +69,25 @@ migrate = Migrate(app, db)
 # masjid_schema = MasjidSchema()
 # masjids_schema = MasjidSchema(many=True)
 
+@app.route('/hello',methods=['GET'])
+def hello():
+    return jsonify({'msg':'Hello World'})
+
+# @route_masjid.route('/',methods=['GET'])
+# def get():
+#     return jsonify({'msg':'Hello World'})
 
 
 if __name__== '__main__':
   from database import Masjid
   from database import User_dimas
 
-  from route_masjid import route_masjid
+  # from route_masjid import route_masjid
   # from route_user import route_user
 
 
 
-  app.register_blueprint(route_masjid)
+  # app.register_blueprint(route_masjid)
   # app.register_blueprint(route_user)
   # db.create_all()
   # app.run(debug=True)

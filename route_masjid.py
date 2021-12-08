@@ -96,3 +96,4 @@ def delete_masjid(id):
 @route_masjid.route('/',methods=['GET'])
 def get():
     return jsonify({'msg':'Hello World'})
+
