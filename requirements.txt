@@ -16,5 +16,7 @@ Flask-SQLAlchemy
 flask-marshmallow
 marshmallow-sqlalchemy
 requests
+Flask-Migrate
+
 
 
