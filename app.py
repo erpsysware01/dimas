@@ -70,12 +70,12 @@ if __name__== '__main__':
   from database import User_dimas
 
   from route_masjid import route_masjid
-  from route_user import route_user
+  # from route_user import route_user
 
 
 
   app.register_blueprint(route_masjid)
-  app.register_blueprint(route_user)
+  # app.register_blueprint(route_user)
   # db.create_all()
   # app.run(debug=True)
   app.run()
