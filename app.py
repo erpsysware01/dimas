@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 # from flask_script import Manager
 from flask_migrate import  Migrate
-from route_test import app1
+# from route_test import app1
 # from route_masjid import route_masjid
 
 
