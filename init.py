@@ -38,6 +38,8 @@ ma = Marshmallow(app)
 
   #
 from route_masjid import route_masjid
+from route_user import route_user
 app.register_blueprint(route_masjid,url_prefix='/api')
+app.register_blueprint(route_user,url_prefix='/api')
 
 
