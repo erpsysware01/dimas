@@ -11,7 +11,7 @@ from flask_migrate import  Migrate
 # import testget
 import os
 import requests
-route_masjid = Blueprint('route_masjid',__name__,url_prefix='/api')
+route_masjid = Blueprint('route_masjid',__name__,url_prefix='/apio')
 # ma = Marshmallow(app)
 
 class MasjidSchema(ma.Schema):

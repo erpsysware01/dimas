@@ -98,7 +98,7 @@ if __name__== '__main__':
 
   from route_masjid import route_masjid
 
-  app.register_blueprint(route_masjid,url_prefix='/api')
+  app.register_blueprint(route_masjid,url_prefix='/apio')
   # app.register_blueprint(route_user)
   # db.create_all()
   # app.run(debug=True)
