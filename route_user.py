@@ -1,6 +1,6 @@
 
 from flask import Flask, request, jsonify,Blueprint
-from app import db,app
+# from app import db,app
 from database import User_dimas
 from flask_marshmallow import Marshmallow
 

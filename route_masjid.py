@@ -1,6 +1,6 @@
 
 from flask import Flask, request, jsonify,Blueprint, render_template, session,abort
-from app import db,app
+from app import db,ma
 from database import Masjid
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -11,8 +11,8 @@ from flask_migrate import  Migrate
 # import testget
 import os
 import requests
-route_masjid = Blueprint('route_masjid',__name__)
-ma = Marshmallow(app)
+route_masjid = Blueprint('route_masjid',__name__,url_prefix='/api')
+# ma = Marshmallow(app)
 
 class MasjidSchema(ma.Schema):
   class Meta:
